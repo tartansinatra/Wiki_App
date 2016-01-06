@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :articles
+  has_many :comments
 
   def role?(role_to_compare)
     self.role.to_s == role_to_compare.to_s
