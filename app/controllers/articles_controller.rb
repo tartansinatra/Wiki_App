@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   
+  # before_action :authenticate_user!, except: [:index]
   before_action :load_article, except:[:index, :new, :create]
+  load_and_authorize_resource
 
   def index
     @articles = Article.all
@@ -11,6 +13,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    current_user.articles.create(article_params)
+    redirect_to articles_path
   end
 
   def show
