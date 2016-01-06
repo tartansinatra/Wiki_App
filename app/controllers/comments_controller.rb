@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
   def create
     current_user.comments.create(comment_params)
-    redirect_to
+    redirect_to comments_path
   end
 
   def show
@@ -20,9 +20,13 @@ class CommentsController < ApplicationController
   end
 
   def update
+    @comment.update(comment_params)
+    redirect_to(comments_path)
   end
 
   def destroy
+    @comment.destroy
+    redirect_to(comments_path)
   end
 
   private

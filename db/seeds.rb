@@ -1,4 +1,6 @@
-User.create!(name: 'A', email: 'a@mail.com', password: 'password')
+User.create!(name: 'A', email: 'a@mail.com', password: 'password', role: 'admin')
+User.create!(name: 'B', email: 'b@mail.com', password: 'password', role: 'author')
+User.create!(name: 'C', email: 'c@mail.com', password: 'password', role: 'guest')
 
 Article.delete_all
 

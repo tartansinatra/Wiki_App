@@ -1,5 +1,5 @@
 <h2><%= @article.title %></h2>
-<h4> Written by: <%= @article.user.name %></h4>
+<h5> Written by: <%= @article.user.name %></h5>
 <p><%= @article.content %></p>
 <% if can? :modify, @article %>
 <%= link_to('Edit', edit_article_path(@article)) %>
