@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   # get 'articles/index'
   resources :articles
-  resources :comments
-  root to: 'articles#index'
 
+  root to: 'articles#index'
+  resources :comments
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
